@@ -5,39 +5,47 @@ public class EmpleadoBR {
 
     public EmpleadoBR() {
     }
+    private float total_salario=0;
 
-    float calculaSalarioBruto(
-            String tipo,
-            float ventasMes,
-            float horasExtra) throws BRException {
 
-        if (tipo=="" || ventasMes < 0 || horasExtra < 0) {
-            throw new BRException("Valores de entrada no válidos");
+
+    float calculaSalarioBruto(String tipo,float ventasMes, float horasExtra) throws BRException {
+
+        total_salario=0;
+
+        if (tipo=="" || ventasMes<0 || horasExtra < 0){
+
+            throw new BRException("Valores de entrada mal escritos");
+
         }
 
-        float total_salario = 0;
+        if(tipo == TipoEmpleado.encargado){
+            total_salario=1500;
 
-        if (tipo == TipoEmpleado.vendedor) {
-            total_salario += TipoEmpleado.sueldo_base_vendedor;
-        } else if (tipo == TipoEmpleado.encargado) {
-            total_salario += TipoEmpleado.sueldo_base_encargado;
+
+        }else {
+
+            total_salario=1000;
+
+
+
+
         }
 
-        if (ventasMes >= 1000 && ventasMes < 1500) {
-            total_salario += 100;
-        } else if (ventasMes >= 1500) {
-            total_salario += 200;
+        if (ventasMes<1500){
+
+            total_salario+=100;
+        }else{
+
+            total_salario+=200;
+
         }
 
-        float salario_extra = horasExtra * TipoEmpleado.precio_hora;
-
-        total_salario += salario_extra;
-
+        total_salario+=horasExtra*20;
 
 
 
         return total_salario;
-
     }
 
 
