@@ -5,11 +5,11 @@ public class EmpleadoBR {
 
     public EmpleadoBR() {
     }
-    private float total_salario=0;
+    private long total_salario=0;
 
 
 
-    float calculaSalarioBruto(String tipo,float ventasMes, float horasExtra) throws BRException {
+    long calculaSalarioBruto(String tipo,long ventasMes, long horasExtra) throws BRException {
 
         total_salario=0;
 
