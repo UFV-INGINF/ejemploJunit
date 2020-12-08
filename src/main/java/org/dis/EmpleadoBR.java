@@ -2,11 +2,10 @@ package org.dis;
 
 public class EmpleadoBR {
 
-
     public EmpleadoBR() {
     }
 
-    float calculaSalarioBruto(
+    public float calculaSalarioBruto(
             String tipo,
             float ventasMes,
             float horasExtra) throws BRException {
@@ -38,6 +37,27 @@ public class EmpleadoBR {
 
         return total_salario;
 
+    }
+
+
+    public float calculaSalarioNeto (float salarioBruto) throws BRException {
+
+
+        if (salarioBruto < 0) {
+            throw new BRException("Salario neto total menor que 0");
+        }
+
+        float salarioNeto = (float) 0.0;
+        if (salarioBruto <1000.0) {
+            salarioNeto = (float) 1000.0;
+
+        } else if (salarioBruto >= 1000 && salarioBruto < 1500) {
+            salarioNeto = (float) ((float) salarioBruto * (1 - 0.16));
+        } else if (salarioBruto >= 1500){
+            salarioNeto = (float) ((float) salarioBruto * (1 - 0.18));
+        }
+
+        return salarioNeto;
     }
 
 
