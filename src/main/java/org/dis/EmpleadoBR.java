@@ -31,18 +31,12 @@ public class EmpleadoBR {
         float salario_extra = horasExtra * TipoEmpleado.precio_hora;
 
         total_salario += salario_extra;
-
-
-
-
         return total_salario;
 
     }
 
 
     public float calculaSalarioNeto (float salarioBruto) throws BRException {
-
-
         if (salarioBruto < 0) {
             throw new BRException("Salario neto total menor que 0");
         }

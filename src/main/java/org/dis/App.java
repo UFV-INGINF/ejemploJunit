@@ -18,6 +18,5 @@ public class App
         } catch (BRException e) {
             System.out.print(e);
         }
-        System.out.print(salario_bruto);
     }
 }
