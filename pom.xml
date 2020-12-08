@@ -6,7 +6,7 @@
 
   <groupId>org.dis</groupId>
   <artifactId>ejemplo_junit</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
 
   <name>ejemplo_junit</name>
   <!-- FIXME change it to the project's website -->
